@@ -4,9 +4,9 @@ of the state of runners on bases as the simulation runs.
 
 It is dependent on another module, named DiceAct, within the main function
 returning an action based on the simulated roll of two six-sided dice.
-"""
-import random
-from DiceAct import ActionMap
+
+The below matrix is the basis of the base formations used by this function,
+where (1,0,1) would indicate runners on first and third base.
 
 a=(0,0,0)
 b=(1,0,0)
@@ -15,22 +15,13 @@ d=(0,0,1)
 e=(1,1,0)
 f=(1,0,1)
 g=(0,1,1)
-h=(1,1,1)
+h=(1,1,1)"""
 
-bases = 'a'
-runs = 0
-strikes = 0
-outs = 0
+import random
+from DiceAct import ActionMap
 
-print(bases, runs, strikes, outs)
-
-def ActOutcomes():
-    global bases
-    global runs
-    global strikes
-    global outs
+def ActOutcomes(bases, runs, strikes, outs):
     DiceAct = ActionMap()
-    print(DiceAct)
     if DiceAct == "double":
         strikes = 0
         if bases == 'a':
@@ -154,8 +145,12 @@ def ActOutcomes():
     return(bases, runs, strikes, outs)
 
 def main():
-    for i in range(12):
-        print(ActOutcomes())
+    (ba, ru, st, ou) = ('a', 0, 0, 0)
+    o = 0
+    while o < 3:
+        (b, r, s, o) = ActOutcomes(ba, ru, st, ou)
+        #print(b, r, s, o)
+        (ba, ru, st, ou) = (b, r, s, o)
 
 if __name__ == '__main__':
     main()
