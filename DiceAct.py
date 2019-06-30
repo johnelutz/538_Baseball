@@ -21,7 +21,7 @@ def ActionMap():
     elif ddd == [5, 5]:
         return("double play")
     elif ddd == [5, 6]:
-        return("triple play")
+        return("triple")
     elif ddd == [6, 6]:
         return("home run")
 

@@ -22,6 +22,7 @@ from DiceAct import ActionMap
 
 def ActOutcomes(bases, runs, strikes, outs):
     DiceAct = ActionMap()
+    #print(DiceAct)
     if DiceAct == "double":
         strikes = 0
         if bases == 'a':
@@ -113,21 +114,19 @@ def ActOutcomes(bases, runs, strikes, outs):
             bases = 'd'
             outs += 2
             runs +=1
-    elif DiceAct == "triple play":
+    elif DiceAct == "triple":
         strikes = 0
         if bases == 'a':
-            bases = 'a'
-            outs += 1
+            bases = 'd'
         elif bases in ('b', 'c', 'd'):
-            bases = 'a'
-            outs +=2
+            bases = 'd'
+            runs +=1
         elif bases in ('e', 'f', 'g'):
-            bases = 'a'
-            outs += 3
+            bases = 'd'
+            runs += 2
         elif bases == 'h':
-            bases = 'a'
-            outs += 3
-            runs += 1
+            bases = 'd'
+            runs += 3
     elif DiceAct == "home run":
         strikes = 0
         if bases == 'a':

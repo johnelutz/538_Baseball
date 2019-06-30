@@ -8,6 +8,9 @@ def HalfInning():
     o = 0
     while o < 3:
         (b, r, s, o) = ActOutcomes(ba, ru, st, ou)
+        if s == 3:
+            s = 0
+            o += 1
         #print(b, r, s, o)
         (ba, ru, st, ou) = (b, r, s, o)
     return (ba, ru, st, ou)
