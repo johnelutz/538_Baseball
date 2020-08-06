@@ -1,3 +1,4 @@
 # 538_Baseball
 ### Created for the PythonNola meetup, as part of an exercise we were each working on individually
-I wrote this code in an effort to approach the project from a functional perspective.  I started by creating D6D6.py, which essentially rolls two six-sided dice and returns the value showing on the face of each die.  
+I wrote this code in an effort to approach the project from a functional perspective.  I started by creating D6D6.py, which essentially rolls two six-sided dice and returns the value showing on the face of each die.  This module can be run on its own, or imported into another project.  When DiceAct.py is run, it imports the logic from D6D6 and runs it, then assigns an action to the outcome of the dice roll.  ActOutcomes.py is an intermediary module that runs the first two modules, and BBPlay.py takes all the previous modules and uses them to simulate a baseball game, returning the number of runs scored by both teams put together in a single game. 
+AvgBB.py runs BBplay.py 10,000 times, and returns the average number of runs scored per game.
